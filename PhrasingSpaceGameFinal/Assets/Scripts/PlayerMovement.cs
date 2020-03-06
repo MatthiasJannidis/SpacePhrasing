@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 lookAt = mousePos - transform.position;
         float angle = Mathf.Atan2(lookAt.y, lookAt.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(.0f, .0f, angle);
+        transform.rotation = Quaternion.Euler(.0f, .0f, angle-90.0f);
 
 
 
@@ -37,7 +37,8 @@ public class PlayerMovement : MonoBehaviour
                 boosting = true;
                 onStartBoost.Invoke();
             }
-            rb.AddForce(lookAt*settings.boostSpeed);
+            Vector3 velocity = lookAt * settings.boostSpeed * Time.deltaTime;
+            rb.velocity += new Vector2(velocity.x, velocity.y);
         } else 
         {
             if(boosting == true) 

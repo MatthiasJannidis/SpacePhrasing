@@ -36,7 +36,7 @@ public class PreviewLine : MonoBehaviour
     {
         int breakIndex;
         CalculatePositions(out breakIndex);
-        for(int i = 0; i < breakIndex; i++) lineRenderer.SetPosition(i, Vector3.Lerp(lastPositions[i], currentPositions[i], .8f));
+        for(int i = 0; i < breakIndex; i++) lineRenderer.SetPosition(i, currentPositions[i]);
         if(breakIndex < segmentAmount) SetAllPositionsAfter(breakIndex, currentPositions[breakIndex]);
         SetLastPositions();
     }
@@ -57,6 +57,7 @@ public class PreviewLine : MonoBehaviour
 
                 if (Vector3.Distance(effectors[j].transform.position, position) < effectors[j].Radius)
                 {
+                    currentPositions[i] = position;
                     breakIndex = i;
                     return;
                 }
