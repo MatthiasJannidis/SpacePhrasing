@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         //rotate with mouse
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
