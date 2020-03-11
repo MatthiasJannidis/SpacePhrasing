@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameSettingsSO settings;
     [SerializeField] UnityEvent onStartBoost = new UnityEvent();
     [SerializeField] UnityEvent onStopBoost = new UnityEvent();
+    [SerializeField] UnityEngine.UI.Image boostBar;
     Rigidbody2D rb;
     bool boosting = false;
     Timer boostRegenTimer = new Timer(.0f);
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             }
             Vector3 velocity = lookAt * settings.boostSpeed * Time.deltaTime;
             rb.velocity += new Vector2(velocity.x, velocity.y);
-            boostFuel -= Time.deltaTime * settings.boostFuelBurnSpeed;
+            IncrementFuel(-Time.deltaTime * settings.boostFuelBurnSpeed);
         } else 
         {
             if(boosting == true) 
@@ -54,9 +55,15 @@ public class PlayerMovement : MonoBehaviour
 
             if (boostRegenTimer.isDone) 
             {
-                boostFuel += Time.deltaTime + settings.boostRegenSpeed;
-                boostFuel = Mathf.Clamp(boostFuel, .0f, settings.boostFuelAmount);
+                IncrementFuel(Time.deltaTime * settings.boostRegenSpeed);
             }
         }
+    }
+
+    void IncrementFuel(float amount)
+    {
+        boostFuel += amount; 
+        boostFuel = Mathf.Clamp(boostFuel, .0f, settings.boostFuelAmount);
+        boostBar.fillAmount = boostFuel / settings.boostFuelAmount;
     }
 }
