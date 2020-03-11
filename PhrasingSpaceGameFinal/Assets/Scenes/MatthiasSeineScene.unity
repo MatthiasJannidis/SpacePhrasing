@@ -458,6 +458,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Line
       objectReference: {fileID: 0}
+    - target: {fileID: 2015176085052372218, guid: 4070d528172035f4cba36b93258085cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2015176085052372220, guid: 4070d528172035f4cba36b93258085cb,
         type: 3}
       propertyPath: segmentAmount
