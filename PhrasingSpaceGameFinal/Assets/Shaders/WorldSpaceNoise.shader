@@ -4,6 +4,7 @@
     {
         _MainTex ("Texture", 2D) = "black" {}
         _Color("Color Tint", Color) = (0,0,0,0)
+        _TilingScale("Tiling Scale", Range(0.1, 50.0)) = 1.0
     }
     SubShader
     {
@@ -32,7 +33,7 @@
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _Color;
-
+            float _TilingScale;
             v2f vert (appdata v)
             {
                 v2f o;
@@ -43,7 +44,7 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.worldPos) * _Color;
+                fixed4 col = tex2D(_MainTex, i.worldPos / _TilingScale) * _Color;
                     
                 return col;
             }
