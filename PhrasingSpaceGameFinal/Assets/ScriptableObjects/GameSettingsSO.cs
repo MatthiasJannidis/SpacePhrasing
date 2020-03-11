@@ -7,4 +7,8 @@ public class GameSettingsSO : ScriptableObject
 {
     public KeyCode boostKey;
     public float boostSpeed;
+    public float boostFuelAmount;
+    public float boostFuelBurnSpeed;
+    public float boostRegenCooldown;
+    public float boostRegenSpeed;
 }
