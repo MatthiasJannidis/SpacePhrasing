@@ -52,7 +52,7 @@ public class PlanetMaker : MonoBehaviour
     //taken from https://twitter.com/jazzmickle/status/1237371977482014721/photo/2
     void GenerateWithBlueNoise(Vector2 origin, Vector2 dimensions, int clusterIndex) 
     {
-        Random.seed = origin.magnitude;
+        Random.InitState(origin.GetHashCode());
         List<Vector3> outputPlanets = new List<Vector3>();
         outputPlanets.Add(new Vector3(origin.x + Random.value * dimensions.x, origin.y + Random.value * dimensions.y));
         const int candidateCount = 20;
@@ -79,7 +79,13 @@ public class PlanetMaker : MonoBehaviour
             }
             outputPlanets.Add(candidates[bestCandidateIndex]);
         }
-        for (int i = 0; i < planetCountPerCluster; i++) planets[clusterIndex, i].transform.position = outputPlanets[i];
+
+        Vector3 playerPos = GameObject.FindObjectOfType<PlayerMovement>().transform.position;
+        for (int i = 0; i < planetCountPerCluster; i++) 
+        {
+            if (Vector3.Distance(playerPos, outputPlanets[i]) > 2.0f) planets[clusterIndex, i].transform.position = outputPlanets[i];
+            else planets[clusterIndex, i].transform.position = new Vector3(100000.0f,100000.0f);
+        }
     }
 
 }
