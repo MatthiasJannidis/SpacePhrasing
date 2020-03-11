@@ -106,7 +106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &8072275207061286820
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -517,7 +517,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.693446
+      scalar: -1.4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -571,7 +571,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.65780485, b: 0.25943398, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1331,21 +1331,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.9963379
-          inSlope: 0
-          outSlope: 0
+          value: 0.40146637
+          inSlope: -0.1707366
+          outSlope: -0.1707366
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.40611354
         - serializedVersion: 3
           time: 1
-          value: 0.09853935
-          inSlope: -1.6292098
-          outSlope: -1.6292098
+          value: 0.1569519
+          inSlope: -0.2639034
+          outSlope: -0.2639034
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.054200597
+          inWeight: 0.16593885
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
