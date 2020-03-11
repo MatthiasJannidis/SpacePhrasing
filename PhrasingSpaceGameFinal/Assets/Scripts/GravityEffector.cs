@@ -17,10 +17,11 @@ public class GravityEffector : MonoBehaviour
 
     public Vector2 GetGravityAtPoint(Vector2 point) 
     {
-        Vector3 dir = point - new Vector2(transform.position.x, transform.position.y);
+        Vector3 dir = new Vector2(transform.position.x, transform.position.y) - point;
         float distance = Mathf.Max(dir.magnitude - radius, .0f);
+        
         dir.Normalize();
-        return -dir * (1.0f / (radius + distance * distance)) * weight;
+        return dir * (1.0f / (radius + distance * distance)) * weight;
     }
 
     // Update is called once per frame

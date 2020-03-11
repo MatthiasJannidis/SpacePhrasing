@@ -9,8 +9,7 @@ public class PreviewLine : MonoBehaviour
     [SerializeField] Color startColor;
     [SerializeField] Color endColor;
 
-    Vector2[] lastPositions;
-    Vector2[] currentPositions;
+    Vector3[] currentPositions;
 
     GravityEffector[] effectors;
     PlayerMovement player;
@@ -23,9 +22,7 @@ public class PreviewLine : MonoBehaviour
         lineRenderer.startColor = startColor;
         lineRenderer.endColor = endColor;
         lineRenderer.positionCount = segmentAmount;
-        lastPositions = new Vector2[segmentAmount];
-        currentPositions = new Vector2[segmentAmount];
-        for (int i = 0; i < segmentAmount; i++) lastPositions[i] = Vector2.zero;
+        currentPositions = new Vector3[segmentAmount];
         player = FindObjectOfType<PlayerMovement>();
         playerRB = player.GetComponent<Rigidbody2D>();
         effectors = FindObjectsOfType<GravityEffector>();
@@ -36,9 +33,8 @@ public class PreviewLine : MonoBehaviour
     {
         int breakIndex;
         CalculatePositions(out breakIndex);
-        for(int i = 0; i < breakIndex; i++) lineRenderer.SetPosition(i, currentPositions[i]);
-        if(breakIndex < segmentAmount) SetAllPositionsAfter(breakIndex, currentPositions[breakIndex]);
-        SetLastPositions();
+        if (breakIndex < segmentAmount) SetAllPositionsAfter(breakIndex, currentPositions[breakIndex]);
+        lineRenderer.SetPositions(currentPositions);
     }
 
 
@@ -67,16 +63,8 @@ public class PreviewLine : MonoBehaviour
         breakIndex = segmentAmount;
     }
 
-    void SetLastPositions() 
-    {
-        for(int i = 0; i < segmentAmount; i++) 
-        {
-            lastPositions[i] = currentPositions[i];
-        }
-    }
-
     void SetAllPositionsAfter(int index, Vector3 position) 
     {
-        for (int i = index; i < segmentAmount; i++) lineRenderer.SetPosition(i, position);
+        for (int i = index; i < segmentAmount; i++) currentPositions[i] =  position;
     }
 }

@@ -760,10 +760,5 @@ PrefabInstance:
       propertyPath: boostBar
       value: 
       objectReference: {fileID: 360776165}
-    - target: {fileID: 8072275207061286823, guid: ec3be1b83c64cd845892e3f87b39dde9,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
