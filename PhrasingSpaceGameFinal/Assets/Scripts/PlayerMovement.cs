@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] UnityEvent onStartBoost = new UnityEvent();
     [SerializeField] UnityEvent onStopBoost = new UnityEvent();
     [SerializeField] UnityEngine.UI.Image boostBar;
+    [SerializeField] AudioSource audioSource = null;
+    [SerializeField] AudioClip boostClip = null;
     Rigidbody2D rb;
     bool boosting = false;
     Timer boostRegenTimer = new Timer(.0f);
@@ -34,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         //boost if clicked and enough boost
         if (Input.GetKey(settings.boostKey) && boostFuel > .001f) 
         {
+            if (audioSource.isPlaying == false) audioSource.PlayOneShot(boostClip);
             if(boosting == false)
             {
                 boosting = true;
@@ -46,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(boosting == true) 
             {
+                if (audioSource.isPlaying == true) audioSource.Stop();
                 boosting = false;
                 boostRegenTimer.reset(settings.boostRegenCooldown);
                 onStopBoost.Invoke();
