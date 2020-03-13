@@ -11,7 +11,7 @@ public class PreviewLine : MonoBehaviour
 
     Vector3[] currentPositions;
 
-    GravityEffector[] effectors;
+    GravityEffector[] effectors = new GravityEffector[0];
     PlayerMovement player;
     LineRenderer lineRenderer;
     Rigidbody2D playerRB;
@@ -25,9 +25,14 @@ public class PreviewLine : MonoBehaviour
         currentPositions = new Vector3[segmentAmount];
         player = FindObjectOfType<PlayerMovement>();
         playerRB = player.GetComponent<Rigidbody2D>();
-        effectors = FindObjectsOfType<GravityEffector>();
+        StartCoroutine(GetEffectorsDelayed());
     }
 
+    IEnumerator GetEffectorsDelayed() 
+    { 
+        yield return null;
+        effectors = FindObjectsOfType<GravityEffector>();
+    }
 
     void FixedUpdate()
     {
