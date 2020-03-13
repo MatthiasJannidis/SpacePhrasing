@@ -16,5 +16,5 @@ MonoBehaviour:
   boostSpeed: 0.5
   boostFuelAmount: 15
   boostFuelBurnSpeed: 5
-  boostRegenCooldown: 1.5
+  boostRegenCooldown: 1
   boostRegenSpeed: 3
