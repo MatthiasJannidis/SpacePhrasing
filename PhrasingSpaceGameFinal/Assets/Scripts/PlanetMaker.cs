@@ -56,7 +56,7 @@ public class PlanetMaker : MonoBehaviour
         {
             for (int x = 0; x < 3; x++)
             {
-                var origin = new Vector2(clustersBottomLeft.x + clusterDimensions.x * x, clustersBottomLeft.y + clusterDimensions.y * y);
+                var origin = new Vector2(clustersBottomLeft.x + clusterDimensions.x * (currentCluster.x + x), clustersBottomLeft.y + clusterDimensions.y * (currentCluster.y + y));
                 Gizmos.DrawWireCube(origin+clusterDimensions*.5f, clusterDimensions);
             }
         }
@@ -89,7 +89,6 @@ public class PlanetMaker : MonoBehaviour
 
     void OnXChanged(int increment) 
     {
-        print("X changed : " + increment.ToString());
         int changedX = currentCluster.x - increment;
         currentCluster.x+= increment;
         for (int y = -1; y < 2; y++)
@@ -101,7 +100,6 @@ public class PlanetMaker : MonoBehaviour
     void onYChanged(int increment) 
     {
 
-        print("Y changed : " + increment.ToString());
         int changedY = currentCluster.y - increment;
         currentCluster.y+= increment;
         for (int x = -1; x < 2; x++)
@@ -112,7 +110,6 @@ public class PlanetMaker : MonoBehaviour
 
     void ShiftCluster(Vector2Int from, Vector2Int to) 
     {
-        print("Cluster shifted from : " + from.ToString() + " to : " + to.ToString());
         PlanetCluster currentCluster = null;
         for(int y = 0; y < 3; y++) 
         {
@@ -173,7 +170,7 @@ public class PlanetCluster
         Vector3 playerPos = Object.FindObjectOfType<PlayerMovement>().transform.position;
         for (int i = 0; i < count; i++)
         {
-            if (Vector3.Distance(playerPos, outputPlanets[i]) > 2.0f) planets[i].transform.position = outputPlanets[i];
+            if (Vector3.Distance(playerPos, outputPlanets[i]) > 5.0f) planets[i].transform.position = outputPlanets[i];
             else planets[i].transform.position = new Vector3(100000.0f, 100000.0f);
         }
     }
