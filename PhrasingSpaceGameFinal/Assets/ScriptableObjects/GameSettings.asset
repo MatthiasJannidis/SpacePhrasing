@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: Assembly-CSharp::GameSettings
   boostKey: 32
-  boostSpeed: 1
+  boostSpeed: 0.5
   boostFuelAmount: 15
   boostFuelBurnSpeed: 5
-  boostRegenCooldown: 1
-  boostRegenSpeed: 2
+  boostRegenCooldown: 1.5
+  boostRegenSpeed: 3
