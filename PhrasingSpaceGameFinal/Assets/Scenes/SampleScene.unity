@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc7d20d508a5564fb8f524c302359b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetCountPerCluster: 16
+  planetCountPerCluster: 5
   planetPrefabs:
   - {fileID: 3127387131903828654, guid: 349a4ce6f4f210c44b6404457afc1ea4, type: 3}
   - {fileID: 7614556530550955491, guid: 400e1e04119d04e4ca90d1d683bc0895, type: 3}
