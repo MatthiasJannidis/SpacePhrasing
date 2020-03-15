@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7614556530550955489}
   m_Layer: 8
   m_Name: ExamplePlanetSmol
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

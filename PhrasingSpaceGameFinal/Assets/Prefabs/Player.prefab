@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 8072275207061286822}
   - component: {fileID: 8072275207061286819}
   - component: {fileID: 1867801182}
+  - component: {fileID: 1285089396}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -338,7 +339,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  boostBar: {fileID: 8984483499766784852}
+  boostBar: {fileID: 0}
   audioSource: {fileID: 1867801182}
   boostClip: {fileID: 8300000, guid: 70a025798153f3f4a86f3ce654e95755, type: 3}
 --- !u!96 &8072275207061286819
@@ -542,6 +543,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1285089396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8072275207061286816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b186a5af7b6c59f4daaa57e8aeac8996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8072275208074562464
 GameObject:
   m_ObjectHideFlags: 0
