@@ -10,6 +10,9 @@ public class DeathSystem : MonoBehaviour
     Rigidbody2D playerBody;
     Vector3 respawnLocation;
     List<GameObject> closestPlanets = new List<GameObject>();
+    [SerializeField] AudioSource audioSource= null;
+    [SerializeField] AudioClip audioClip = null;
+    [SerializeField] ParticleSystem explosionSystem = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,8 @@ public class DeathSystem : MonoBehaviour
 
     IEnumerator Die(Collision2D collider)
     {
+        explosionSystem.Play();
+        audioSource.PlayOneShot(audioClip);
         playerRenderer.enabled = false;
         playerBody.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(1.5f);
@@ -84,7 +89,6 @@ public class DeathSystem : MonoBehaviour
         {
             closestPlanets.RemoveAt(closestPlanets.Count - 1);
         }
-        Debug.Log(closestPlanets.Count);
     }
 
 }
