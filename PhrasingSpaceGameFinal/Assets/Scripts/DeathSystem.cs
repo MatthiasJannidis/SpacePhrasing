@@ -14,6 +14,7 @@ public class DeathSystem : MonoBehaviour
     [SerializeField] AudioClip audioClip = null;
     [SerializeField] ParticleSystem explosionSystem = null;
     [SerializeField] Image fuelBar = null;
+    [SerializeField] GameObject boostSystem = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,13 +45,18 @@ public class DeathSystem : MonoBehaviour
         fuelBar.enabled = false;
         explosionSystem.Play();
         audioSource.PlayOneShot(audioClip);
+        playerBody.simulated = false;
         playerRenderer.enabled = false;
         playerCollider.enabled = false;
+        boostSystem.SetActive(false);
         yield return new WaitForSeconds(1.5f);
         if (closestPlanets.Count==0) FindClosestPlanets(0.5f, collider);
         gameObject.transform.position = closestPlanets[1].transform.position + ((closestPlanets[0].transform.position - closestPlanets[1].transform.position)*0.5f);
         playerCollider.enabled = true;
         playerRenderer.enabled = true;
+        playerBody.simulated = true;
+        boostSystem.SetActive(true);
+        playerBody.velocity = new Vector2(0,0);
         closestPlanets.Clear();
         fuelBar.enabled = true;
     }
