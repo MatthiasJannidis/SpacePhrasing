@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeathSystem : MonoBehaviour
 {
@@ -10,14 +11,17 @@ public class DeathSystem : MonoBehaviour
     Rigidbody2D playerBody;
     Vector3 respawnLocation;
     List<GameObject> closestPlanets = new List<GameObject>();
+    Collider2D playerCollider;
     [SerializeField] AudioSource audioSource= null;
     [SerializeField] AudioClip audioClip = null;
     [SerializeField] ParticleSystem explosionSystem = null;
+    [SerializeField] Image fuelBar = null;
     // Start is called before the first frame update
     void Start()
     {
         playerRenderer = GetComponent<SpriteRenderer>();
         playerBody = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<Collider2D>();
 
     }
 
@@ -38,15 +42,18 @@ public class DeathSystem : MonoBehaviour
 
     IEnumerator Die(Collision2D collider)
     {
+        fuelBar.enabled = false;
         explosionSystem.Play();
         audioSource.PlayOneShot(audioClip);
         playerRenderer.enabled = false;
-        playerBody.velocity = new Vector2(0, 0);
+        playerCollider.enabled = false;
         yield return new WaitForSeconds(1.5f);
         if (closestPlanets.Count==0) FindClosestPlanets(0.5f, collider);
         gameObject.transform.position = closestPlanets[1].transform.position + ((closestPlanets[0].transform.position - closestPlanets[1].transform.position)*0.5f);
+        playerCollider.enabled = true;
         playerRenderer.enabled = true;
         closestPlanets.Clear();
+        fuelBar.enabled = true;
     }
 
 
