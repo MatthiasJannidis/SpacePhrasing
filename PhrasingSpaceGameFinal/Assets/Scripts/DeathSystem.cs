@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class DeathSystem : MonoBehaviour
 {
-
-
     SpriteRenderer playerRenderer;
     Rigidbody2D playerBody;
     Vector3 respawnLocation;
@@ -19,9 +17,10 @@ public class DeathSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerRenderer = GetComponent<SpriteRenderer>();
-        playerBody = GetComponent<Rigidbody2D>();
-        playerCollider = GetComponent<Collider2D>();
+        var player = FindObjectOfType<PlayerMovement>().gameObject;
+        playerRenderer = gameObject.GetComponent<SpriteRenderer>();
+        playerBody = gameObject.GetComponent<Rigidbody2D>();
+        playerCollider = gameObject.GetComponent<Collider2D>();
 
     }
 
