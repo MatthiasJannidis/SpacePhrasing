@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3549204053323282727}
   - component: {fileID: 3549204053323282726}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PlanetMaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,4 +47,7 @@ MonoBehaviour:
   planetPrefabs:
   - {fileID: 3127387131903828654, guid: 349a4ce6f4f210c44b6404457afc1ea4, type: 3}
   - {fileID: 7614556530550955491, guid: 400e1e04119d04e4ca90d1d683bc0895, type: 3}
+  - {fileID: 189691102043522918, guid: ba23fde5340376045a12e00aee5e7388, type: 3}
+  - {fileID: 1587395605438007937, guid: 064879a56c06e394c90702a57bfe1e2c, type: 3}
+  - {fileID: 7709252290733031172, guid: 1be0fa9a86faa7341b88ff4ccd6da49c, type: 3}
   clusterDimensions: {x: 20, y: 20}
