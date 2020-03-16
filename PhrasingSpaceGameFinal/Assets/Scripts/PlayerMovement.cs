@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     void IncrementFuel(float amount)
     {
-        boostFuel += amount; 
+        boostFuel += amount;
         boostFuel = Mathf.Clamp(boostFuel, .0f, settings.boostFuelAmount);
         boostBar.fillAmount = boostFuel / settings.boostFuelAmount;
     }
