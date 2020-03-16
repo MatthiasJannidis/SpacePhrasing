@@ -609,6 +609,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 179155611, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 179155611, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
+      propertyPath: VelocityModule.inWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1285089396, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
+      propertyPath: fuelBar
+      value: 
+      objectReference: {fileID: 1664413232}
     - target: {fileID: 8072275207061286816, guid: ec3be1b83c64cd845892e3f87b39dde9,
         type: 3}
       propertyPath: m_Name
@@ -676,6 +688,18 @@ PrefabInstance:
       objectReference: {fileID: 1728650651}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
+--- !u!114 &1664413232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8984483499766784852, guid: ec3be1b83c64cd845892e3f87b39dde9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1549973010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1728650649
 GameObject:
   m_ObjectHideFlags: 0
