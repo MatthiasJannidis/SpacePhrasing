@@ -497,12 +497,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0253cf7a8b900e4449196bdbc5ca1c00, type: 3}
---- !u!1 &1064740486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8072275208095218450, guid: ec3be1b83c64cd845892e3f87b39dde9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1549973010}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1155272344
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,22 +678,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 179155611, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 179155611, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
-      propertyPath: VelocityModule.inWorldSpace
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1285089396, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
-      propertyPath: fuelBar
-      value: 
-      objectReference: {fileID: 1664413232}
-    - target: {fileID: 1285089396, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
-      propertyPath: boostSystem
-      value: 
-      objectReference: {fileID: 1064740486}
     - target: {fileID: 8072275207061286816, guid: ec3be1b83c64cd845892e3f87b39dde9,
         type: 3}
       propertyPath: m_Name
@@ -760,30 +738,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8072275207061286822, guid: ec3be1b83c64cd845892e3f87b39dde9,
-        type: 3}
-      propertyPath: boostBar
-      value: 
-      objectReference: {fileID: 1664413232}
-    - target: {fileID: 8072275208074562464, guid: ec3be1b83c64cd845892e3f87b39dde9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
---- !u!114 &1664413232 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8984483499766784852, guid: ec3be1b83c64cd845892e3f87b39dde9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1549973010}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1912726490
 PrefabInstance:
   m_ObjectHideFlags: 0
