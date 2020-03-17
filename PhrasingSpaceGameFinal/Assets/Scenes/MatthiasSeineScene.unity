@@ -497,6 +497,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0253cf7a8b900e4449196bdbc5ca1c00, type: 3}
+--- !u!1 &1064740486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8072275208095218450, guid: ec3be1b83c64cd845892e3f87b39dde9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1549973010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1155272344
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +696,10 @@ PrefabInstance:
       propertyPath: fuelBar
       value: 
       objectReference: {fileID: 1664413232}
+    - target: {fileID: 1285089396, guid: ec3be1b83c64cd845892e3f87b39dde9, type: 3}
+      propertyPath: boostSystem
+      value: 
+      objectReference: {fileID: 1064740486}
     - target: {fileID: 8072275207061286816, guid: ec3be1b83c64cd845892e3f87b39dde9,
         type: 3}
       propertyPath: m_Name

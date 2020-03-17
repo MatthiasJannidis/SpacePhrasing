@@ -105,7 +105,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -2068,7 +2068,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    inWorldSpace: 0
+    inWorldSpace: 1
   InheritVelocityModule:
     enabled: 0
     m_Mode: 0
@@ -5093,7 +5093,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  boostBar: {fileID: 0}
+  boostBar: {fileID: 8984483499766784852}
   audioSource: {fileID: 1867801182}
   boostClip: {fileID: 8300000, guid: 70a025798153f3f4a86f3ce654e95755, type: 3}
 --- !u!96 &8072275207061286819
@@ -5312,6 +5312,8 @@ MonoBehaviour:
   audioSource: {fileID: 1867801182}
   audioClip: {fileID: 8300000, guid: 68dc9e4437ff6cf479542dd2e5dadd11, type: 3}
   explosionSystem: {fileID: 179155611}
+  fuelBar: {fileID: 8984483499766784852}
+  boostSystem: {fileID: 8072275208095218450}
 --- !u!1 &8072275208074562464
 GameObject:
   m_ObjectHideFlags: 0
@@ -5322,7 +5324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8072275208074562467}
   - component: {fileID: 8072275208074562466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
