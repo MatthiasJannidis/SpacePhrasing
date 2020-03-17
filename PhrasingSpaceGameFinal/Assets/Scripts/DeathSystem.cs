@@ -10,6 +10,10 @@ public class DeathSystem : MonoBehaviour
     Vector3 respawnLocation;
     List<GameObject> closestPlanets = new List<GameObject>();
     Collider2D playerCollider;
+
+    [HideInInspector] public UnityEngine.Events.UnityEvent onDie = new UnityEngine.Events.UnityEvent();
+    [HideInInspector] public UnityEngine.Events.UnityEvent onRevive = new UnityEngine.Events.UnityEvent();
+
     [SerializeField] AudioSource audioSource= null;
     [SerializeField] AudioClip audioClip = null;
     [SerializeField] ParticleSystem explosionSystem = null;
@@ -42,6 +46,7 @@ public class DeathSystem : MonoBehaviour
 
     IEnumerator Die(Collision2D collider)
     {
+        onDie.Invoke();
         fuelBar.enabled = false;
         explosionSystem.Play();
         audioSource.PlayOneShot(audioClip);
@@ -59,6 +64,7 @@ public class DeathSystem : MonoBehaviour
         playerBody.velocity = new Vector2(0,0);
         closestPlanets.Clear();
         fuelBar.enabled = true;
+        onRevive.Invoke();
     }
 
 
