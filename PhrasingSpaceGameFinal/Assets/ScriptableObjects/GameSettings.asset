@@ -18,3 +18,6 @@ MonoBehaviour:
   boostFuelBurnSpeed: 5
   boostRegenCooldown: 1
   boostRegenSpeed: 4
+  pointRadius: 1
+  safeTime: 1
+  scoreMultiplier: 1
